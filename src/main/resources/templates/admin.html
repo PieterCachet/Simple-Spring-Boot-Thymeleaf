@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="fragments/head ::head">
+</head>
+<body>
+	<div th:replace="fragments/header"></div>
+	<div class="container">
+		<div class="bs-component">
+			<div th:replace="fragments/tabs"></div>
+		</div>
+		<h2 class="text-center">Admin Panel</h2>
+		<div class="col-sm-4 row">
+			<h5>Customer</h5>
+			<a href="/customers" class="btn btn-sm btn-info btn-block" type="submit">View All Customers</a>
+			<a href="/addcustomer" class="btn btn-sm btn-info btn-block" type="submit">Add new Customer</a>
+		</div>
+		<hr>
+		<div class="col-sm-4 row">
+			<h5>Policy</h5>
+			<a href="/policies" class="btn btn-sm btn-info btn-block" type="submit">View All Policies</a>
+			<a  href="/addpolicy" class="btn btn-sm btn-info btn-block" type="submit">Add new Policy</a>
+			
+		</div>
+		<hr>
+		<div class="col-sm-4 row">
+			<h5>Risk Items</h5>
+			<a href="/riskitems" class="btn btn-sm btn-info btn-block" type="submit">View All Risk Items</a>
+			<a href="/addriskitem" class="btn btn-sm btn-info btn-block" type="submit">Add Risk Item</a>
+		</div>
+		<hr>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

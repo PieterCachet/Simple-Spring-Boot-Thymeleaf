@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link"
+		th:classappend="${tab == 'admin' ? 'active' : ''}" th:href="@{/admin}"
+		href="#">Admin</a></li>
+	<li class="nav-item"><a class="nav-link"
+		th:classappend="${tab == 'dashboard' ? 'active' : ''}"
+		th:href="@{/dashboard}" href="#">Dashboard</a></li>
+	<li class="nav-item"><a class="nav-link"
+		th:classappend="${tab == 'customers' ? 'active' : ''}"
+		th:href="@{/customers}" href="#">Customers</a></li>
+	<li class="nav-item"><a class="nav-link"
+		th:classappend="${tab == 'policies' ? 'active' : ''}"
+		th:href="@{/policies}" href="#">Policies</a></li>
+	<li class="nav-item"><a class="nav-link"
+		th:classappend="${tab == 'riskitems' ? 'active' : ''}"
+		th:href="@{/riskitems}" href="#">Risk Items</a></li>
+</ul>

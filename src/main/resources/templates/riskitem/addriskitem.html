@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="fragments/head ::head">
+</head>
+<body>
+	<div th:replace="fragments/header"></div>
+	<div class="container">
+		<div class="bs-component">
+			<div th:replace="fragments/tabs"></div>
+		</div>
+		<h2 class="text-center">Add Risk Item</h2>
+		<div class="bs-component">
+			<div th:replace="fragments/alerts"></div>
+		</div>
+		<form id="frmAddRiskItem" class="form-horizontal"
+			data-toggle="validator" action="#" th:action="@{/addriskitem}"
+			th:object="${riskitem}" method="post">
+			<fieldset>
+				<div class="row">
+					<div class="col-lg-3"></div>
+					<div class="col-lg">
+						<div class="form-group row">
+							<label for="inputRiskItemName" class="col-sm-3 col-form-label">Policy
+								Number</label>
+							<div class="col-sm-9">
+								<select id="inputRiskItemName" class="form-control"
+									th:field="*{policyId}" required="true">
+									<option th:each="p : ${policies}" th:value="${p.id}"
+										th:text="${p.policyNumber}"></option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="inputRiskItemName" class="col-sm-3 col-form-label">Risk
+								Item Name</label>
+							<div class="col-sm-9">
+								<select id="inputRiskItemName" class="form-control"
+									th:field="*{riskItemName}" required="true">
+									<option
+										th:each="p : ${T(com.abcinsurance.abcInsurance.entities.RiskItems).values()}"
+										th:value="${p}" th:text="${p.getName()}"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="riskStartDate" class="col-sm-3 col-form-label">Start
+								Date</label>
+							<div class="col-sm-9">
+								<input th:field="*{riskStartDate}" type="date" name="date"
+									class="form-control" id="riskStartDate" placeholder="date"
+									required="true">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="riskpremium" class="col-sm-3 col-form-label">Premium
+								Amount</label>
+							<div class="col-sm-9">
+								<input th:field="*{premium}" type="number" name="number"
+									class="form-control" id="riskpremium" placeholder="Premium"
+									required="true">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3"></div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3"></div>
+					<div class="col-lg-3">
+						<button class="btn btn-sm btn-primary btn-block" type="submit">Save</button>
+					</div>
+					<div class="col-lg-3">
+						<a class="btn btn-sm btn-primary btn-block" href="/riskitems">Cancel</a>
+					</div>
+
+					<div class="col-lg-3"></div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+	<script th:src="@{/js/validator.js}" src="../static/js/validator.js"></script>
+</body>
+</html>

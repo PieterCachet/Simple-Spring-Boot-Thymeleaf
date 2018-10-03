@@ -1,0 +1,16 @@
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).PRIMARY}"
+	class="alert alert-primary" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).SECONDARY}"
+	class="alert alert-secondary" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).SUCCESS}"
+	class="alert alert-success" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).DANGER}"
+	class="alert alert-danger" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).WARNING}"
+	class="alert alert-warning" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).INFO}"
+	class="alert alert-info" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).LIGHT}"
+	class="alert alert-light" role="alert" th:text="${alertMessage}"></div>
+<div th:if="${alert == T(com.abcinsurance.abcInsurance.dto.UIAlerts).DARK}"
+	class="alert alert-dark" role="alert" th:text="${alertMessage}"></div>

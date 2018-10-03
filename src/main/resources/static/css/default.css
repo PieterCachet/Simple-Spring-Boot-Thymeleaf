@@ -1,0 +1,85 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+.nav {
+	margin-bottom: 15px;
+}
+
+body {
+	margin-bottom: 50px;
+}
+
+.header {
+	margin-bottom: 100px;
+}
+
+.btn {
+	margin-bottom: 10px
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #808080;
+	color: white;
+	margin-top: 50px;
+}
+
+.bodyLanding, .landinghtml {
+	height: 100%;
+	margin: 0;
+}
+
+.landingBG {
+	/* The image used */
+	background-image: url(../img/cover.jpg);
+	/* Full height */
+	height: 100%;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.company {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Georgia';
+	color: black;
+	font-weight: bold;
+	size: auto;
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+
+.slogon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Georgia';
+	color: #f8f9fa;
+	font-weight: bold;
+	size: auto;
+	font-size: larger;
+}
+
+.has-error .form-control {
+	border-color: red;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio,
+	.has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline,
+	.has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label,
+	.has-error.checkbox-inline label {
+	color: red;
+}

@@ -1,0 +1,15 @@
+spring:
+  h2:
+    console:
+      enabled: true   
+  application:
+    name: abc insurance
+    description: abc insurance admin portal
+  jpa:
+    hibernate:
+      ddl-auto: update
+management:
+  endpoints:
+    web:
+      base-path: /
+      

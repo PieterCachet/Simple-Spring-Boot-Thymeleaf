@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="fragments/head ::head">
+</head>
+<body>
+	<div th:replace="fragments/header"></div>
+	<div class="container">
+		<div class="bs-component">
+			<div th:replace="fragments/tabs"></div>
+		</div>
+		<h2 class="text-center">Edit Customer</h2>
+		<div class="bs-component">
+			<div th:replace="fragments/alerts"></div>
+		</div>
+		<form id="frmUpdateCustomer" class="form-horizontal"
+			data-toggle="validator" action="#" th:action="@{/updatecustomer}"
+			th:object="${customer}" method="post">
+			<fieldset>
+				<div class="row">
+					<div class="col-lg-3"></div>
+					<div class="col-lg">
+						<div class="form-group row">
+							<input th:field="*{id}" th:value="${customer.id}" type="text"
+								hidden="true"> <label for="inputFirstName"
+								class="col-sm-3 col-form-label">First Name</label>
+							<div class="col-sm-9">
+								<input th:field="*{firstName}" th:value="${customer.firstName}"
+									type="text" name="name" class="form-control"
+									id="inputFirstName" placeholder="First Name" required="true">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="inputSurname" class="col-sm-3 col-form-label">Surname</label>
+							<div class="col-sm-9">
+								<input th:field="*{surname}" th:value="${customer.surname}"
+									type="text" name="surname" class="form-control"
+									id="inputSurname" placeholder="Surname" required="true">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="inputID" class="col-sm-3 col-form-label">ID
+								Number</label>
+							<div class="col-sm-9">
+								<input th:field="*{zaId}" th:value="${customer.zaId}"
+									class="form-control" type="text" id="inputID"
+									placeholder="Id Number" required="true"
+									data-pattern-error="ID Number must be 13 digits"
+									pattern="[\d]{13,13}" />
+								<div class="help-block with-errors issue"></div>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="col-lg-3"></div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3"></div>
+					<div class="col-lg-3">
+						<button class="btn btn-sm btn-primary btn-block" type="submit">Save</button>
+					</div>
+					<div class="col-lg-3">
+						<a class="btn btn-sm btn-primary btn-block" href="/customers">Cancel</a>
+					</div>
+
+					<div class="col-lg-3"></div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+	<script th:src="@{/js/validator.js}" src="../static/js/validator.js"></script>
+</body>
+</html>
